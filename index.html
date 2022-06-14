@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ColorVeins</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>ColorVeins</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>ColorVeins</h1>
+    <h3>Добавьте цвета в ваше произведение!</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>О нашей компании</h2>
+      <span>Прогрессивные возмоности нашей нейронной сети</span>
+    </div>
+    <div class="text">
+      <span>С помощью обученной сети вы сможете раскрасить своё творение и сделать его ещё краше! Мы предлагаем издателям переложить всю ответственной по раскраске на плечи нашей нейронной сети.</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Пример работы</h2>
+    <h4></h4>
+
+    <div class="img">
+      <img src="https://www.funmanga.com/uploads/chapter_files/3242/200/p_00011.jpg" alt="">
+      <span>До</span>
+    </div>
+    <div class="img">
+      <img src="https://img.you-anime.ru/manga-images/chapters/initial-d/v18/c201/11.jpg" alt="">
+      <span>После</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Обратная связь</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Сообщение <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title"></span><br>
+    </div>
+    <div>
+      <span class="title">Что может наша нейронная сеть?</span><br>
+      <span class="heading">1.Умная зарисовка ваших произведений</span>
+      <p>Наша нейронная сеть раскрасит ваши эскизы так, как вы захотите. Нейросеть самостоятельно сгенерирует вопросы по вашей работе и будет ориентироваться на ваши ответы.</p>
+      <span class="heading">2.Пристальное внимание к тексту</span>
+      <p>Наша нейросеть улучшит качество текста и выделит его, если вы того захотите!</p>
+      <span class="heading">3.Перевод текста (beta)</span>
+      <p>Наша нейросеть способна перевести вашу работу на другой язык!</p>
+    </div>
+    <div>
+      <span class="heading">Свяжитесь с нами!</span>
+      <p>colorveins@mail.ru</p>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+</html>
